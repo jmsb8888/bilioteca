@@ -17,47 +17,14 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container mt-4 my-style-destacados">
     <div class="row">
-        <div  class="col-md-3">
+        <div th:each="libro : ${libros}" class="col-md-3 mb-4">
             <div class="card">
-                <img src="https://desarrolloweb.com/storage/tag_images/actual/BzOL16MEqsKOe0VThjF6FXPBi0uyK16lkTety9Wz.png">
+                <img th:src="${libro.imagenUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-            </div>
-        </div>
-
-        <div  class="col-md-3">
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-            </div>
-        </div>
-
-        <div  class="col-md-3">
-            <div class="card">
-                <img src="https://i.blogs.es/8d2420/650_1000_java/1366_2000.png">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Ver detalles</a>
-                </div>
-            </div>
-        </div>
-
-        <div  class="col-md-3">
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
+                    <h5 th:text="${libro.nombre}" class="card-title"></h5>
+                    <p th:text="${libro.descripcion}" class="card-text"></p>
                     <a href="#" class="btn btn-primary">Ver detalles</a>
                 </div>
             </div>
