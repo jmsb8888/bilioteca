@@ -14,7 +14,7 @@ public class LibroService {
         this.libroRepsitory = libroRepsitory;
     }
 
-    public List<Libro> buscarDestacados(){
+    /*public List<Libro> buscarDestacados(){
        /* List<Libro> destacados = new ArrayList<>();
 
         Libro libro = new Libro();
@@ -43,6 +43,13 @@ public class LibroService {
         destacados.add(libro4);
 
         return destacados;*/
-    return libroRepsitory.findAll();
+    //return libroRepsitory.findAll();
+    //}*/
+   public List<Libro> buscarDestacados(){
+        return libroRepsitory.buscartodos();
     }
+    public List<Libro> buscarPorEditorial(int editorialId ){
+        return libroRepsitory.buscarPorEditorial(editorialId);
+    }
+
 }

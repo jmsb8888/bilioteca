@@ -11,9 +11,12 @@
 <body>
 <H1>Bienvenidos ... </H1>
 <p>Aprenderemos MVC y Capas</p>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="@{/}">
+            <img src="img/logo.png" alt="logo" width="30" height="24">
+            Biblioteca Uptc
+        </a>
     </div>
 </nav>
 
@@ -25,7 +28,10 @@
                 <div class="card-body">
                     <h5 th:text="${libro.nombre}" class="card-title"></h5>
                     <p>
-                        <span th:text="${libro.editorial.nombre}" class="badge bg-warning text-dark">Warning</span>
+                        <a th:href="@{/librosPorEditorial(editorialId=${libro.editorial.id})}"
+                            th:text="${libro.editorial.nombre}"
+                            class="badge bg-warning text-dark">
+                        </a>
                     </p>
                     <p th:text="${libro.descripcion}" class="card-text"></p>
                     <a href="#" class="btn btn-primary">Ver detalles</a>

@@ -22,4 +22,10 @@ public class ListadoController {
         model.addAttribute("libros", destacados);
         return "listado";
     }
+    @RequestMapping("/librosPorEditorial")
+    public String listarLibrosPorEditorial(int editorialId, Model model) {
+        List<Libro> libros = libroService.buscarPorEditorial(editorialId);
+        model.addAttribute("libros", libros);
+        return "listado";
+    }
 }
