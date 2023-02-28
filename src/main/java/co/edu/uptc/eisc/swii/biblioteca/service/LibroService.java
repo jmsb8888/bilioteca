@@ -1,5 +1,6 @@
 package co.edu.uptc.eisc.swii.biblioteca.service;
 import co.edu.uptc.eisc.swii.biblioteca.domain.Libro;
+import co.edu.uptc.eisc.swii.biblioteca.repository.LibroRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -7,8 +8,14 @@ import java.util.List;
 
 @Service
 public class LibroService {
+    private final LibroRepository libroRepsitory;
+
+    public LibroService (LibroRepository libroRepsitory) {
+        this.libroRepsitory = libroRepsitory;
+    }
+
     public List<Libro> buscarDestacados(){
-        List<Libro> destacados = new ArrayList<>();
+       /* List<Libro> destacados = new ArrayList<>();
 
         Libro libro = new Libro();
 
@@ -35,7 +42,7 @@ public class LibroService {
         libro4.setImagenUrl("https://images.cdn1.buscalibre.com/fit-in/360x360/d8/5f/d85f51614b3767145ca19b306d0d96bf.jpg");
         destacados.add(libro4);
 
-        return destacados;
-
+        return destacados;*/
+    return libroRepsitory.findAll();
     }
 }
