@@ -54,4 +54,8 @@ public class LibroService {
     public List<Libro> buscar(String consulta ){
         return libroRepsitory.buscar(consulta);
     }
+
+    public Libro guardar(Libro libro){
+        return libroRepsitory.save(libro);
+    }
 }
