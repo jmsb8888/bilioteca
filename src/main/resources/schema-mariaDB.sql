@@ -24,3 +24,32 @@ VALUES
 ('Gerencia de proyectos complejos',
  'La fundamentación teórica en gerencia de proyectos ha tratado de unificar  temáticas y requerimientos vinculados a la estandarización de procesos,  gestión de interesados, evaluación de requisitos y rendimientos sobre  productos o servicios concordantes al cumplimiento de objetivos estratégicos en las organizaciones;',
  'https://simehbucket.s3.amazonaws.com/images/16e0d14698cb5c5bd8ba5a97800d0caa-medium.jpg');
+
+create table editorial(
+    id int primary key auto_increment,
+    nombre varchar(200) not null ,
+    sitio_web varchar(500)
+);
+
+insert into editorial
+(id, nombre, sitio_web)values
+(1, 'Planeta','https://www.planetadelibros.com/editorial/editorial-planeta/8'),
+(2, 'Mirahadas','https://www.mirahadas.com/'),
+(3, 'Pre-Textos','https://www.pre-textos.com/'),
+(4, 'Sexto Piso','https://sextopiso.mx/'),
+(5, 'Nordica','https://www.nordicalibros.com/'),
+(6, 'Acantilado','https://www.acantilado.es/'),
+(7, 'La huerta grande','https://www.lahuertagrande.com/');
+
+alter table libro
+add column editorial_id int,
+add foreign key (editorial_id) references editorial(id);
+update libro set libro.editorial_id=1 where id in (1, 5);
+update libro set libro.editorial_id=2 where id in (2);
+update libro set libro.editorial_id=3 where id in (3);
+update libro set libro.editorial_id=4 where id in (4);
+update libro set libro.editorial_id=5 where id in (6);
+update libro set libro.editorial_id=6 where id in (7);
+
+alter table libro
+modify editorial_id int not null ;

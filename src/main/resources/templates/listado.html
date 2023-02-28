@@ -24,6 +24,9 @@
                 <img th:src="${libro.imagenUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 th:text="${libro.nombre}" class="card-title"></h5>
+                    <p>
+                        <span th:text="${libro.editorial.nombre}" class="badge bg-warning text-dark">Warning</span>
+                    </p>
                     <p th:text="${libro.descripcion}" class="card-text"></p>
                     <a href="#" class="btn btn-primary">Ver detalles</a>
                 </div>

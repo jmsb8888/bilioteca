@@ -1,9 +1,9 @@
 package co.edu.uptc.eisc.swii.biblioteca.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
+
+
 
 @Entity
 public class Libro {
@@ -13,6 +13,16 @@ public class Libro {
     private String nombre;
     private String descripcion;
     private String imagenUrl;
+    @ManyToOne
+    private Editorial editorial;
+
+    public Editorial getEditorial () {
+        return editorial;
+    }
+
+    public void setEditorial (Editorial editorial) {
+        this.editorial = editorial;
+    }
 
     public Integer getId () {
         return id;
