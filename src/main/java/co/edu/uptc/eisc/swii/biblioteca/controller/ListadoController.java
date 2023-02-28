@@ -28,4 +28,11 @@ public class ListadoController {
         model.addAttribute("libros", libros);
         return "listado";
     }
+
+    @RequestMapping("/buscar")
+    public String buscar(String consulta, Model model) {
+        List<Libro> libros = libroService.buscar(consulta);
+        model.addAttribute("libros", libros);
+        return "listado";
+    }
 }

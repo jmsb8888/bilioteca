@@ -13,4 +13,8 @@ public interface LibroRepository extends JpaRepository<Libro,Integer> {
 
     @Query("from Libro v where v.editorial.id = ?1 order by v.nombre")
     List<Libro> buscarPorEditorial(int editorialId);
+
+    @Query("from Libro l where l.nombre like '%l%' ")
+    List<Libro> buscar(String Consulta);
+
 }

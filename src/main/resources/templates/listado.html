@@ -17,6 +17,11 @@
             <img src="img/logo.png" alt="logo" width="30" height="24">
             Biblioteca Uptc
         </a>
+        <form th:action="@{/buscar}" class="d-flex">
+            <input autofocus="autofocus" name="consulta" class="form-control me-2"
+                   type="search" th:placeholder="${param.consulta}" aria-label="Search" >
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
     </div>
 </nav>
 
@@ -37,6 +42,14 @@
                     <a href="#" class="btn btn-primary">Ver detalles</a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4 my-style-destacados">
+    <div class="row">
+        <div class="col col-md-12 text-end mb-4">
+            <a th:href="@{/libros/crear}" class="btn btn-outline-success">Crear Libro</a>
         </div>
     </div>
 </div>

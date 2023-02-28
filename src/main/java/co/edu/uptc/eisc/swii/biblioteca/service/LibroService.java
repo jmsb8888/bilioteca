@@ -51,5 +51,7 @@ public class LibroService {
     public List<Libro> buscarPorEditorial(int editorialId ){
         return libroRepsitory.buscarPorEditorial(editorialId);
     }
-
+    public List<Libro> buscar(String consulta ){
+        return libroRepsitory.buscar(consulta);
+    }
 }
